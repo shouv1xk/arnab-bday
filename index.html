@@ -216,56 +216,6 @@ pointer-events: none;
 
 /* Small footer */
 .tiny { margin-top: 8px; opacity: .7; font-size: 12px; }
-  /* Phone adjustments */
-@media (max-width: 600px) {
-.card {
-width: 95vw;
-padding: 14px;
-}
-
-.plate {
-width: clamp(160px, 75vw, 280px);
-height: clamp(12px, 2vw, 18px);
-}
-
-.cake {
-width: clamp(140px, 70vw, 260px);
-height: clamp(100px, 40vw, 150px);
-}
-
-.drip { width: 18px; height: 40px; }
-.drip.d1 { height: 34px; }
-.drip.d2 { height: 44px; }
-.drip.d3 { height: 36px; }
-.drip.d4 { height: 42px; }
-
-.candles {
-gap: 8px;
-}
-.candle {
-width: 10px;
-height: 40px;
-}
-.flame {
-width: 10px;
-height: 16px;
-}
-
-.shout {
-font-size: clamp(18px, 6vw, 28px);
-}
-
-/* optional: make buttons stack on phones */
-.actions {
-flex-direction: column;
-align-items: center;
-}
-.actions button {
-width: 100%;
-max-width: 240px;
-}
-}
-</style>
 </style>
 </head>
 <body>
@@ -273,8 +223,8 @@ max-width: 240px;
 
 <div class="stage" role="dialog" aria-labelledby="title" aria-live="polite">
 <div class="card" id="card">
-
-
+<h1 id="title">🎉 Surprise!</h1>
+<p class="sub">Make a wish and tap the button to celebrate.</p>
 
 <div class="cake-wrap" aria-label="Birthday cake with candles">
 <div class="cake" aria-hidden="true">
@@ -414,5 +364,22 @@ window.addEventListener('load', () => {
 setTimeout(() => { startConfetti(); }, 700);
 });
 </script>
+
+<button id="playMusicBtn">🎵 Play Birthday Music</button>
+<audio id="birthdaySong" loop>
+<source src=" bday.mp3 " type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<script>
+document.getElementById('playMusicBtn').addEventListener('click', () => {
+const audio = document.getElementById('birthdaySong');
+audio.play();
+document.getElementById('playMusicBtn').style.display = 'none';
+});
+</script>
+
+</button>
+
 </body>
 </html>
