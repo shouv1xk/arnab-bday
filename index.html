@@ -381,5 +381,16 @@ document.getElementById('playMusicBtn').style.display = 'none';
 
 </button>
 
+  <!-- Music -->
+<audio id="birthdaySong" loop>
+<source src="bday.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<!-- Play button for browsers that block autoplay -->
+<button onclick="document.getElementById('birthdaySong').play(); this.style.display='none'">
+🎵 Play Birthday Music
+</button>
 </body>
+
 </html>
