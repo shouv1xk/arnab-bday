@@ -388,9 +388,16 @@ Your browser does not support the audio element.
 </audio>
 
 <!-- Play button for browsers that block autoplay -->
-<button onclick="document.getElementById('birthdaySong').play(); this.style.display='none'">
+
+  <button
+onclick="document.getElementById('birthdaySong').play(); this.style.display='none'"
+style="position: fixed; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 9999; padding: 12px 20px; font-size: 16px; cursor: pointer;"
+>
 🎵 Play Birthday Music
+</button>
+  
 </button>
 </body>
 
 </html>
+
