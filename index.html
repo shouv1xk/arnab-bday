@@ -216,6 +216,55 @@ pointer-events: none;
 
 /* Small footer */
 .tiny { margin-top: 8px; opacity: .7; font-size: 12px; }
+/* Phone adjustments */
+@media (max-width: 600px) {
+.card {
+width: 95vw;
+padding: 14px;
+}
+
+.plate {
+width: clamp(160px, 75vw, 280px);
+height: clamp(12px, 2vw, 18px);
+}
+
+.cake {
+width: clamp(140px, 70vw, 260px);
+height: clamp(100px, 40vw, 150px);
+}
+
+.drip { width: 18px; height: 40px; }
+.drip.d1 { height: 34px; }
+.drip.d2 { height: 44px; }
+.drip.d3 { height: 36px; }
+.drip.d4 { height: 42px; }
+
+.candles {
+gap: 8px;
+}
+.candle {
+width: 10px;
+height: 40px;
+}
+.flame {
+width: 10px;
+height: 16px;
+}
+
+.shout {
+font-size: clamp(18px, 6vw, 28px);
+}
+
+/* optional: make buttons stack on phones */
+.actions {
+flex-direction: column;
+align-items: center;
+}
+.actions button {
+width: 100%;
+max-width: 240px;
+}
+}
 </style>
 </head>
 <body>
@@ -365,4 +414,5 @@ setTimeout(() => { startConfetti(); }, 700);
 });
 </script>
 </body>
+
 </html>
