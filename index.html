@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Happy Birthday Arnab 🎂</title>
+<style>
+:root {
+--bg: #0f1226;
+--panel: #181b39;
+--accent: #ff7bd3;
+--cake: #FA66A9;
+--icing: #fff0f6;
+--plate: #d7e3ff;
+--candle: #7aa2ff;
+--wick: #333;
+--text: #f5f7ff;
+--shadow: rgba(0,0,0,.35);
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+margin: 0;
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+background: radial-gradient(1200px 800px at 70% -10%, #1e224a 0%, var(--bg) 60%);
+color: var(--text);
+overflow: hidden;
+}
+
+/* Center stage */
+.stage {
+position: relative;
+width: 100%;
+height: 100%;
+display: grid;
+place-items: center;
+padding: 24px;
+}
+
+/* Pop modal panel */
+.card {
+position: relative;
+width: min(680px, 92vw);
+background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+border: 1px solid rgba(255,255,255,.08);
+border-radius: 22px;
+box-shadow: 0 30px 80px var(--shadow), inset 0 1px 0 rgba(255,255,255,.08);
+padding: clamp(18px, 4vw, 28px);
+text-align: center;
+transform: scale(.9) translateY(8px);
+opacity: 0;
+animation: pop 700ms cubic-bezier(.2,1,.2,1) 300ms forwards;
+backdrop-filter: blur(8px);
+}
+
+@keyframes pop {
+0% { transform: scale(.9) translateY(16px); opacity: 0; }
+60% { transform: scale(1.02) translateY(0); opacity: 1; }
+100% { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+h1 {
+margin: 0 0 6px 0;
+font-size: clamp(28px, 6vw, 44px);
+letter-spacing: 1px;
+}
+.sub {
+opacity: .85;
+margin-bottom: 14px;
+font-size: clamp(14px, 2.5vw, 16px);
+}
+
+/* Cake group */
+.cake-wrap {
+position: relative;
+display: inline-block;
+margin: clamp(10px, 3vw, 14px) auto;
+}
+
+/* Plate */
+.plate {
+width: clamp(220px, 60vw, 420px);
+height: clamp(16px, 3vw, 22px);
+background: radial-gradient(100% 120% at 50% 30%, white 0%, var(--plate) 45%, #b8c7ff 100%);
+border-radius: 999px;
+margin: 0 auto;
+box-shadow: 0 8px 24px rgba(0,0,0,.35);
+}
+
+/* Cake base */
+.cake {
+position: absolute;
+left: 50%;
+bottom: 12px;
+transform: translateX(-50%);
+width: clamp(200px, 55vw, 380px);
+height: clamp(120px, 32vw, 200px);
+background: linear-gradient(180deg, var(--icing) 0 26%, var(--cake) 26% 100%);
+border-radius: 14px 14px 10px 10px;
+box-shadow: 0 10px 30px rgba(0,0,0,.25);
+overflow: visible;
+}
+
+/* Drips (icing) */
+.drip { position: absolute; top: 22%; width: 26px; height: 60px; background: var(--icing); border-radius: 14px; }
+.drip.d1 { left: 14%; height: 52px; }
+.drip.d2 { left: 32%; height: 66px; }
+.drip.d3 { left: 57%; height: 50px; }
+.drip.d4 { left: 78%; height: 64px; }
+
+/* Sprinkles */
+.sprinkle {
+position: absolute; top: 10%;
+width: 10px; height: 4px; border-radius: 2px;
+transform: rotate(var(--r, 10deg));
+background: var(--accent);
+opacity: .9;
+}
+.sprinkle.s1 { left: 12%; --r: 12deg; }
+.sprinkle.s2 { left: 28%; --r: -14deg; }
+.sprinkle.s3 { left: 46%; --r: 22deg; }
+.sprinkle.s4 { left: 64%; --r: -18deg; }
+.sprinkle.s5 { left: 82%; --r: 8deg; }
+
+/* Candles */
+.candles {
+position: absolute;
+left: 50%; top: -18px; transform: translateX(-50%);
+display: grid; grid-auto-flow: column; gap: clamp(8px, 2.5vw, 16px);
+align-items: end;
+}
+.candle {
+width: clamp(12px, 2vw, 16px);
+height: clamp(42px, 8vw, 70px);
+background: linear-gradient(180deg, #a2b9ff, var(--candle));
+border-radius: 6px;
+position: relative;
+box-shadow: inset 0 0 0 1px rgba(255,255,255,.35);
+}
+.candle:before { /* stripes */
+content: ""; position: absolute; inset: 0;
+background: repeating-linear-gradient(135deg, transparent 0 8px, rgba(255,255,255,.6) 8px 12px);
+border-radius: 6px;
+mix-blend-mode: screen; opacity: .3;
+}
+.wick {
+position: absolute; top: -8px; left: 50%; transform: translateX(-50%);
+width: 2px; height: 10px; background: var(--wick); border-radius: 2px;
+}
+.flame {
+position: absolute; top: -22px; left: 50%; transform: translateX(-50%);
+width: clamp(10px, 2vw, 14px); height: clamp(16px, 3vw, 22px);
+background: radial-gradient(50% 70% at 50% 60%, #fff7a8 0%, #ffd43b 60%, #ff9e00 100%);
+border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+filter: drop-shadow(0 0 6px #ffcc00) drop-shadow(0 0 16px #ff9900);
+animation: flicker .12s infinite alternate ease-in-out, sway 2.1s infinite ease-in-out;
+}
+.flame.off {
+animation: none; opacity: 0; filter: none;
+}
+@keyframes flicker {
+from { transform: translateX(-50%) scale(1) }
+to { transform: translateX(-50%) scale(1.08) }
+}
+@keyframes sway {
+0% { margin-left: -1px }
+50% { margin-left: 1px }
+100% { margin-left: -1px }
+}
+
+/* Big headline */
+.shout {
+margin-top: clamp(14px, 3.5vw, 20px);
+font-weight: 800;
+font-size: clamp(20px, 6.5vw, 48px);
+line-height: 1.1;
+letter-spacing: .8px;
+text-shadow: 0 2px 0 rgba(0,0,0,.25);
+}
+.name {
+display: inline-block;
+padding: .1em .4em;
+border-radius: 10px;
+background: linear-gradient(90deg, #ff7bd3, #7aa2ff);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+
+/* Buttons */
+.actions {
+margin-top: 14px;
+display: flex; gap: 10px; justify-content: center; flex-wrap: wrap;
+}
+button {
+border: none;
+border-radius: 999px;
+padding: 10px 16px;
+background: #2a2f63;
+color: var(--text);
+font-weight: 600;
+cursor: pointer;
+box-shadow: 0 6px 18px rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.06);
+transition: transform .12s ease, filter .12s ease, background .2s ease;
+}
+button:hover { transform: translateY(-1px); filter: brightness(1.08); }
+button:active { transform: translateY(0); filter: brightness(.98); }
+
+/* Canvas behind card for confetti */
+canvas#confetti {
+position: absolute; inset: 0;
+width: 100%; height: 100%;
+pointer-events: none;
+}
+
+/* Small footer */
+.tiny { margin-top: 8px; opacity: .7; font-size: 12px; }
+</style>
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+
+<div class="stage" role="dialog" aria-labelledby="title" aria-live="polite">
+<div class="card" id="card">
+<h1 id="title">🎉 Surprise!</h1>
+<p class="sub">Make a wish and tap the button to celebrate.</p>
+
+<div class="cake-wrap" aria-label="Birthday cake with candles">
+<div class="cake" aria-hidden="true">
+<!-- icing drips -->
+<span class="drip d1"></span>
+<span class="drip d2"></span>
+<span class="drip d3"></span>
+<span class="drip d4"></span>
+<!-- sprinkles -->
+<span class="sprinkle s1"></span>
+<span class="sprinkle s2"></span>
+<span class="sprinkle s3"></span>
+<span class="sprinkle s4"></span>
+<span class="sprinkle s5"></span>
+
+<!-- candles -->
+<div class="candles" aria-hidden="true">
+<div class="candle"><span class="wick"></span><span class="flame"></span></div>
+<div class="candle"><span class="wick"></span><span class="flame"></span></div>
+<div class="candle"><span class="wick"></span><span class="flame"></span></div>
+<div class="candle"><span class="wick"></span><span class="flame"></span></div>
+<div class="candle"><span class="wick"></span><span class="flame"></span></div>
+</div>
+</div>
+<div class="plate" aria-hidden="true"></div>
+</div>
+
+<div class="shout" aria-live="assertive">HAPPY BIRTHDAYYYY <span class="name">mur cutu rnb</span>🥹</div>
+
+<div class="actions">
+<button id="celebrateBtn" aria-label="Celebrate now">Celebrate 🎊</button>
+<button id="blowBtn" aria-label="Blow out candles">BLOW KOR 🕯️</button>
+<button id="relightBtn" aria-label="Relight candles">Relight 🔥</button>
+</div>
+
+<div class="tiny">Tur karone strawberry flavour🍓</div>
+</div>
+</div>
+
+<script>
+/* --- Simple confetti --- */
+(function () {
+const canvas = document.getElementById('confetti');
+const ctx = canvas.getContext('2d');
+let W, H, pieces = [], running = false, frame;
+
+function resize() {
+W = canvas.width = window.innerWidth;
+H = canvas.height = window.innerHeight;
+}
+window.addEventListener('resize', resize); resize();
+
+function spawn(n=160) {
+pieces = Array.from({length:n}, () => ({
+x: Math.random()*W,
+y: -20 - Math.random()*H*0.4,
+w: 6 + Math.random()*6,
+h: 10 + Math.random()*12,
+vy: 2 + Math.random()*3,
+vx: -1 + Math.random()*2,
+r: Math.random()*360,
+vr: -5 + Math.random()*10,
+s: Math.random() < .5 ? 1 : -1,
+o: .7 + Math.random()*0.3
+}));
+}
+
+function draw() {
+ctx.clearRect(0,0,W,H);
+for (const p of pieces) {
+ctx.save();
+ctx.globalAlpha = p.o;
+ctx.translate(p.x, p.y);
+ctx.rotate(p.r * Math.PI/180);
+// alternate hues to match gradient title
+const g = ctx.createLinearGradient(-p.w/2,-p.h/2,p.w/2,p.h/2);
+g.addColorStop(0, '#ff7bd3');
+g.addColorStop(1, '#7aa2ff');
+ctx.fillStyle = g;
+ctx.fillRect(-p.w/2,-p.h/2,p.w,p.h);
+ctx.restore();
+
+// update
+p.x += p.vx * p.s;
+p.y += p.vy;
+p.r += p.vr;
+if (p.y > H + 30) p.y = -20, p.x = Math.random()*W; // loop
+}
+frame = requestAnimationFrame(draw);
+}
+
+function startConfetti() {
+if (running) return;
+running = true;
+spawn();
+draw();
+// stop after a while
+setTimeout(() => { running = false; cancelAnimationFrame(frame); }, 7000);
+}
+
+// Expose
+window.startConfetti = startConfetti;
+})();
+
+/* --- Candle controls --- */
+const blowBtn = document.getElementById('blowBtn');
+const relightBtn = document.getElementById('relightBtn');
+const celeBtn = document.getElementById('celebrateBtn');
+
+function setFlames(on=true) {
+document.querySelectorAll('.flame').forEach(f =>
+on ? f.classList.remove('off') : f.classList.add('off')
+);
+}
+
+celeBtn.addEventListener('click', () => {
+setFlames(true);
+startConfetti();
+pulseHeadline();
+});
+
+blowBtn.addEventListener('click', () => setFlames(false));
+relightBtn.addEventListener('click', () => setFlames(true));
+
+/* pulse headline a bit on celebrate */
+function pulseHeadline() {
+const shout = document.querySelector('.shout');
+shout.animate(
+[{ transform: 'scale(1)' }, { transform: 'scale(1.06)' }, { transform: 'scale(1)' }],
+{ duration: 800, easing: 'cubic-bezier(.2,1,.2,1)' }
+);
+}
+
+/* auto “pop in” confetti once after load */
+window.addEventListener('load', () => {
+// slight delay to match the card pop animation
+setTimeout(() => { startConfetti(); }, 700);
+});
+</script>
+</body>
+</html>
